@@ -1,0 +1,766 @@
+/*  
+==========================================================
+- Theme Style
+==========================================================
+*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+.main-navigation {
+    clear: both;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.main-navigation ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.main-navigation ul ul {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    float: left;
+    position: absolute;
+    top: 100%;
+    left: -999em;
+    z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+    left: -999em;
+    top: 0;
+}
+
+.main-navigation ul ul li:hover>ul,
+.main-navigation ul ul li.focus>ul {
+    left: 100%;
+}
+
+.main-navigation ul ul a {
+    width: 200px;
+}
+
+.main-navigation ul li:hover>ul,
+.main-navigation ul li.focus>ul {
+    left: auto;
+}
+
+.main-navigation li {
+    float: left;
+    position: relative;
+}
+
+.main-navigation a {
+    display: block;
+    text-decoration: none;
+}
+
+
+/* Small menu. */
+
+.menu-toggle,
+.main-navigation.toggled ul {
+    display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+    .menu-toggle {
+        display: none;
+    }
+    .main-navigation ul {
+        display: block;
+    }
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+    float: left;
+    width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+
+
+/* Text meant only for screen readers. */
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+}
+
+
+/* Do not show the outline on the skip link target. */
+
+#content[tabindex="-1"]:focus {
+    outline: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+    clear: both;
+}
+
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+
+.widget {
+    margin: 0 0 1.5em;
+    /* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+    max-width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+
+.sticky {
+    display: block;
+}
+
+.hentry {
+    margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+    display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 1.5em 0 0;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
+
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+
+
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+    /* Theme Footer (when set to scrolling) */
+    display: none;
+}
+
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+
+.infinity-end.neverending .site-footer {
+    display: block;
+}
+
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+
+/* Make sure embeds and iframes fit their containers. */
+
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+
+/* Make sure logo link wraps around logo image. */
+
+.custom-logo-link {
+    display: inline-block;
+}
+
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+
+.wp-caption {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+    margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+    text-align: center;
+}
+
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+
+.gallery {
+    margin-bottom: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+    max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+    max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+    max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+}
+
+.gallery-caption {
+    display: block;
+}
+
+
+/* Main Menu Style */
+
+.navbar-toggler {
+    border: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.webalive-navbar {
+    position: relative;
+    width: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    background: #f1f1f1;
+}
+
+.webalive-menu-wrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.webalive-navbar-brand {
+    max-width: 200px;
+}
+
+.webalive-main-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.webalive-main-menu li {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    z-index: 100;
+}
+
+.webalive-main-menu li a {
+    display: block;
+    padding: 20px 15px;
+}
+
+.webalive-main-menu li>.sub-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0px;
+    z-index: 10;
+    padding: 0px;
+    margin: 0px;
+    width: 225px;
+    background: #f1f1f1;
+}
+
+.webalive-main-menu li>.sub-menu li {
+    display: block;
+    position: relative;
+    z-index: 0;
+}
+
+.webalive-main-menu li>.sub-menu li a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.webalive-main-menu li>.sub-menu li ul.sub-menu {
+    display: block;
+    position: absolute;
+    width: 225px;
+    left: 100%;
+    top: 0%;
+    z-index: 1;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    background-color: #f1f1f1;
+}
+
+.open {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.fixed-to-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.webalive-main-menu .menu-item-has-children {
+    padding-right: 10px;
+}
+
+.webalive-main-menu>.menu-item-has-children:after {
+    content: "\f078";
+    position: absolute;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 1;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 10px;
+}
+
+.webalive-main-menu>.menu-item-has-children:hover::after {
+    content: "\f077";
+}
+
+.webalive-main-menu>li ul.sub-menu .menu-item-has-children:after {
+    content: "\f054";
+    position: absolute;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 1;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 10px;
+}
+
+.webalive-main-menu>li ul.sub-menu .menu-item-has-children:hover::after {
+    content: "\f053";
+}
+
+.webalive-main-menu>li ul.sub-menu li.menu-item-has-children:after {
+    right: 10px;
+}
+
+.webalive-navbar-toggler,
+.webalive-main-menu li .mb-toggle {
+    display: none;
+}
+
+.mb-toggle .dashicons {
+    margin: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.current-menu-item>a {
+    color: #222;
+    font-weight: 500;
+}
+
+
+/* Portrait and Landscape */
+
+@media only screen and (max-width:1024px) {
+    .webalive-navbar {
+        background-color: #303030;
+    }
+    .webalive-navbar .container {
+        padding: 0;
+    }
+    .webalive-brand-wrap {
+        padding: 0 15px;
+    }
+    a.webalive-navbar-brand {
+        font-weight: 600;
+    }
+    a.webalive-navbar-brand,
+    a.webalive-navbar-brand:visited,
+    .webalive-navbar-toggler {
+        color: #fff
+    }
+    .webalive-brand-wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+    .webalive-navbar-toggler {
+        display: block;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .webalive-main-menu {
+        display: none;
+        width: 100%;
+        padding: 0 15px;
+        background: #f1f1f1;
+    }
+    .webalive-main-menu>li {
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    }
+    .webalive-main-menu li a {
+        padding: 10px 0px;
+    }
+    .webalive-main-menu .menu-item-has-children:after {
+        display: none;
+    }
+    .webalive-main-menu li .mb-toggle {
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        color: #333;
+        text-align: center;
+        line-height: 2.5;
+        top: 2px;
+        right: 0px;
+    }
+    .webalive-main-menu li ul {
+        position: relative;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .webalive-main-menu li ul li {
+        display: block;
+        position: relative;
+    }
+    .webalive-main-menu>li ul.sub-menu {
+        display: none;
+        width: 100%;
+        position: relative;
+        top: 0;
+        background-color: #fff;
+        padding: 0px 0px 0px 10px;
+    }
+    .webalive-main-menu>li ul.sub-menu>li {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .webalive-main-menu>li ul.sub-menu li:first-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .webalive-main-menu>li ul.sub-menu>li:last-child {
+        border: 0;
+    }
+    .webalive-main-menu>li ul.sub-menu>li:only-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .webalive-main-menu li>.sub-menu li ul.sub-menu {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 0px 0px 0px 10px;
+    }
+    .webalive-main-menu .menu-item-has-children {
+        padding-right: 0;
+    }
+    .webalive-main-menu li>.sub-menu li a {
+        padding: 10px 0px;
+    }
+    /*mobile responsive menu start*/
+    .webalive-navbar-toggler::after {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: 15px;
+    }
+    .webalive-navbar-toggler::after {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: 15px;
+    }
+    .webalive-navbar-toggler i::after {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: 7px;
+    }
+    .webalive-navbar-toggler::before {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .webalive-navbar-toggler i::before {
+        visibility: hidden;
+    }
+    .webalive-navbar-toggler {
+        right: 18px;
+        top: 45px;
+        width: 24px;
+        position: absolute;
+    }
+    .webalive-navbar-toggler,
+    .webalive-navbar-toggler:before,
+    .webalive-navbar-toggler:after,
+    .webalive-navbar-toggler.js-hide-nav:before,
+    .webalive-navbar-toggler.js-hide-nav:after {
+        -webkit-transition: all 200ms ease;
+        -moz-transition: all 200ms ease;
+        -ms-transition: all 200ms ease;
+        -o-transition: all 200ms ease;
+        transition: all 200ms ease;
+    }
+    .webalive-navbar-toggler.js-hide-nav:before {
+        moz-transform: rotate(45deg) translateX(6px) translateY(6px);
+        -webkit-transform: rotate(45deg) translateX(6px) translateY(6px);
+        -o-transform: rotate(45deg) translateX(6px) translateY(6px);
+        -ms-transform: rotate(45deg) translateX(6px) translateY(6px);
+        transform: rotate(45deg) translateX(6px) translateY(6px);
+    }
+    .webalive-navbar-toggler.js-hide-nav:after {
+        -moz-transform: rotate(-45deg) translateX(5px) translateY(-5px);
+        -webkit-transform: rotate(-45deg) translateX(5px) translateY(-5px);
+        -o-transform: rotate(-45deg) translateX(5px) translateY(-5px);
+        -ms-transform: rotate(-45deg) translateX(5px) translateY(-5px);
+        transform: rotate(-45deg) translateX(5px) translateY(-5px);
+    }
+    .webalive-navbar-toggler.js-hide-nav i:after {
+        visibility: hidden;
+    }
+    /*mobile responsive menu end*/
+}
