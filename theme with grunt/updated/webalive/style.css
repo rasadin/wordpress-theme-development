@@ -1,0 +1,320 @@
+/*!
+Theme Name: Webalive
+Theme URI: https://webalive.com.au
+Author: Webalive Team
+Author URI: https://webalive.com.au/team
+Description: A modern WordPress starter theme
+Version: 2.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: webalive
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+
+/*start:common page design */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+::-moz-selection {
+    background: #FFAB49;
+    color: #fff;
+    text-shadow: none;
+    text-shadow: 0.3px 0.3px #FFAB49;
+    transition: 0.3s;
+}
+
+::selection {
+    background: #FFAB49;
+    color: #fff;
+    text-shadow: none;
+    text-shadow: 0.3px 0.3px #FFAB49;
+    color: #fff;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: 16px;
+    line-height: 27px;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 1.25;
+}
+
+h3 {
+    font-size: 28px;
+    line-height: 1.25;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 25px 0;
+    color: #000;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+.nomargin {
+    margin: 0;
+}
+
+.no-padding p {
+    margin: 0;
+    padding: 0;
+}
+
+.no-margin p {
+    margin: 0;
+    padding: 0;
+}
+
+body a:hover {
+    color: #fecd2a;
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus,
+a:link,
+a:visited {
+    outline: 0!important;
+    color: #fe6981;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.entry-content a,
+.entry-summary a,
+.page-content a {
+    color: #fe6981;
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0 0 0 22px;
+    margin-left: 0px;
+}
+
+ul li,
+ol li {
+    padding: 0;
+    margin: 0 0 6px 0;
+    color: #000000;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+ul li .elementor-icon-list-icon {
+    line-height: 27px;
+}
+
+blockquote {
+    color: #2B2B2D;
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: 500;
+}
+
+blockquote p {
+    color: #2B2B2D;
+    font-size: 24px;
+    line-height: 35px;
+    position: relative;
+}
+
+blockquote p:last-child {
+    margin: 0;
+}
+
+blockquote.wp-block-quote p {}
+
+.list_wrp hr {
+    margin-bottom: 11px !important;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table th {
+    background: #eee;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+table,
+th,
+td {
+    text-align: left;
+    border: 1px solid #d9d9d9;
+    color: #000;
+    font-size: 16px;
+    line-height: 29px;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif !important;
+    padding: 6px 15px;
+}
+
+table tr:nth-child(2n) {
+    background: #f7fcff;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    background: #fea54e;
+    background: -moz-linear-gradient(left, rgba(254, 165, 78, 1) 0, rgba(254, 89, 144, 1) 100%);
+    background: -webkit-linear-gradient(left, rgba(254, 165, 78, 1) 0, rgba(254, 89, 144, 1) 100%);
+    background: linear-gradient(to right, rgba(254, 165, 78, 1) 0, rgba(254, 89, 144, 1) 100%);
+    padding: 10px 41px;
+    -webkit-border-radius: 29px;
+    -moz-border-radius: 29px;
+    border-radius: 29px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff!important;
+    text-decoration: none !important;
+    max-width: 212px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]:hover {
+    background: #fe5990;
+    background: -moz-linear-gradient(left, rgba(254, 89, 144, 1) 1%, rgba(254, 165, 78, 1) 100%);
+    background: -webkit-linear-gradient(left, rgba(254, 89, 144, 1) 1%, rgba(254, 165, 78, 1) 100%);
+    background: linear-gradient(to right, rgba(254, 89, 144, 1) 1%, rgba(254, 165, 78, 1) 100%);
+    text-decoration: none !important;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+optgroup,
+select,
+textarea {
+    width: 100%!important;
+    height: 48px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: normal;
+    background-color: #f7f7f7;
+    color: #000 !important;
+    padding: 8px 16px !important;
+    box-shadow: none !important;
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    border-radius: 22px;
+    border: 0px;
+    font-family: 'Poppins', sans-serif !important;
+    outline: 0px!important;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+optgroup,
+select,
+textarea:focus {
+    border: 1px solid #000;
+    -webkit-border-radius: 22px;
+    -moz-border-radius: 22px;
+    border-radius: 22px;
+}
+
+select {
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+}
+
+
+/*placeholder start*/
+
+::-webkit-input-placeholder {
+    /* Edge */
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: normal;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: normal;
+}
+
+::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+/*placeholder end*/
